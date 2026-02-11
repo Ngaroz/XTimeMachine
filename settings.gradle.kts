@@ -13,5 +13,12 @@ dependencyResolutionManagement {
         jcenter()
     }
 }
+allprojects {
+    repositories {
+        google()
+        mavenCentral() // <--- ADD THIS LINE
+        jcenter()
+    }
+}
 rootProject.name = "XTimeMachine"
 include(":app")
