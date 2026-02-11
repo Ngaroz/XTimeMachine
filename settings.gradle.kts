@@ -11,7 +11,11 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        jcenter() // <--- IT MUST BE HERE (The second block)
-        maven { url 'https://api.xposed.info/' } // <--- Add this backup just in case
+        jcenter()
+        // The fix: Kotlin syntax uses 'uri()' and double quotes
+        maven { url = uri("https://api.xposed.info/") }
     }
 }
+
+rootProject.name = "XTimeMachine" // Keep your project name
+include(":app")
